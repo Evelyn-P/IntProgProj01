@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'pg_display/home'
+
+  get 'pg_display/invoices'
+
+  get 'pg_display/products'
+
   devise_for :users
   resources :invoices
   # The priority is based upon order of creation: first created -> highest priority.
