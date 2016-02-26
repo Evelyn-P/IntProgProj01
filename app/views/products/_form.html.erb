@@ -1,41 +1,66 @@
-<%= form_for(@product) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<div class = "row">
 
-      <ul>
-      <% @product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  <%= form_for(@product) do |f| %>
+    <% if @product.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+        <ul>
+        <% @product.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :Invoice_id %><br>
-    <%= f.text_field :Invoice_id %>
+  <div class = "control-group">
+    <%= f.label :Invoice_id, class: 'control-label' %><br>
+    <div class = "controls">
+      <%= f.text_field :Invoice_id %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :Product_Name %><br>
-    <%= f.text_field :Product_Name %>
+
+  <div class = "control-group">
+    <%= f.label :Product_Name, class: 'control-label' %><br>
+    <div class = "controls">
+      <%= f.text_field :Product_Name %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :Category %><br>
-    <%= f.text_field :Category %>
+
+  <div class = "control-group">
+    <%= f.label :Category, class: 'control-label' %><br>
+    <div class = "controls">
+      <%= f.text_field :Category %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :Product_URL %><br>
-    <%= f.text_field :Product_URL %>
+
+  <div class = "control-group">
+    <%= f.label :Product_URL, class: 'control-label' %><br>
+    <div class = "controls">
+      <%= f.text_field :Product_URL %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :Quantity %><br>
-    <%= f.number_field :Quantity %>
+
+  <div class = "control-group">
+    <%= f.label :Quantity, class: 'control-label' %><br>
+    <div class = "controls">
+      <%= f.number_field :Quantity %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :Details %><br>
-    <%= f.text_field :Details %>
+
+  <div class = "control-group">
+    <%= f.label :Details, class: 'control-label' %><br>
+    <div class = "controls">
+      <%= f.text_field :Details %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="control-group">
+    <div class = "controls">
+      <%= f.submit 'Create Product', class: 'btn btn-success' %>
+    </div>
   </div>
+
+</div>
+
 <% end %>
