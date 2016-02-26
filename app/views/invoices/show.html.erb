@@ -17,3 +17,9 @@
 
 <%= link_to 'Edit', edit_invoice_path(@invoice) %> |
 <%= link_to 'Back', invoices_path %>
+
+<hr>
+
+<% @invoice.products.each do |product| %>
+  <%= product.id %>
+<% end %>

@@ -6,23 +6,19 @@ class InvoiceSearch
 
   def initialize(params)
     params ||= {}
-    @date_from = parsed_date(params[:date_from], 7.days.ago.to_date.to_s)
-    @date_to = parsed_date(params[:date_to], Date.today.to_s)
+    @date_from = Date.strptime(params[:date_from]).beginning_of_day rescue 7.days.ago
+    @date_to = Date.strptime(params[:date_to]).end_of_day rescue 0.days.ago.end_of_day
   end
 
+  def get_date_from_string
+    @date_from.strftime ("%Y/%m/%d")
+  end
+
+  def get_date_to_string
+    @date_to.strftime ("%Y/%m/%d")
+  end
 
   def scope
-    Invoice.where('date BETWEEN ? AND ?', @date_from, @date_to)
+    Invoice.where(date: @date_from..@date_to)
   end
-
-
-
-  private
-
-  def parsed_date(date_string, default)
-    Date.parse(date_string)
-  rescue ArgumentError, TypeError
-      default
-  end
-
 end
