@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   get 'pg_display/products'
 
   devise_for :users
-  resources :invoices
+
+  resources :invoices do
+    resources :products, except: [:index], controller: 'invoices/products'
+  end
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

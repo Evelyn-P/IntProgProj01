@@ -13,7 +13,7 @@
 
       <li> <%= link_to "Home", pg_display_home_path %> </li>
       <li> <%= link_to "Invoices", invoices_path %> </li>
-      <li> <%= link_to "Products", products_path %> </li>
+      <li> <%= link_to "Products", invoices_path %> </li>
 
       <% if current_user %>
         <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li>

@@ -15,5 +15,32 @@
   <%= @invoice.Done_By %>
 </p>
 
+
+<div class = "media">
+  <div class = "media-body">
+    <table class = "table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @products.each do |product| %>
+          <tr>
+            <td><h4> <%= product.name %> </td></h4>
+            <td><h4> <%= product.catagory %> </td></h4>
+            <td><h4> <%= product.quantity %> </td></h4>
+            <td><h4> <%= product.price %> </td></h4>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 <%= link_to 'Edit', edit_invoice_path(@invoice) %> |
 <%= link_to 'Back', invoices_path %>
