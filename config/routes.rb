@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :products
   get 'pg_display/home'
 
   get 'pg_display/invoices'

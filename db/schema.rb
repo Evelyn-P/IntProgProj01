@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160226010048) do
+ActiveRecord::Schema.define(version: 20160226020110) do
 
   create_table "invoices", force: :cascade do |t|
     t.datetime "Date"
@@ -21,6 +21,19 @@ ActiveRecord::Schema.define(version: 20160226010048) do
     t.datetime "updated_at",  null: false
     t.string   "Status_Type"
   end
+
+  create_table "products", force: :cascade do |t|
+    t.integer  "Invoice_id"
+    t.string   "Product_Name"
+    t.string   "Category"
+    t.string   "Product_URL"
+    t.integer  "Quantity"
+    t.string   "Details"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "products", ["Invoice_id"], name: "index_products_on_Invoice_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
