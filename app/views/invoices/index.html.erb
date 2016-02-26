@@ -26,6 +26,7 @@
           <th>Date</th>
           <th>Company</th>
           <th>Done by</th>
+          <th>Status</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -36,6 +37,7 @@
             <td><%= invoice.Date.strftime ("%Y/%m/%d") %></td>
             <td><%= invoice.Company %></td>
             <td><%= invoice.Done_By %></td>
+            <td><%= invoice.Status_Type %></td>
             <td><%= link_to 'Show', invoice, class: 'btn btn-mini btn-info' %></td>
             <td><%= link_to 'Edit', edit_invoice_path(invoice), class: 'btn btn-mini btn-success' %></td>
             <td><%= link_to 'Destroy', invoice, method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>

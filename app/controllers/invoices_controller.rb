@@ -71,6 +71,6 @@ class InvoicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def invoice_params
-      params.require(:invoice).permit(:Date, :Company, :Done_By)
+      params.require(:invoice).permit(:Date, :Company, :Done_By, :Status_Type)
     end
 end
